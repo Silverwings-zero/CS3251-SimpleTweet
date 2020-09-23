@@ -1,50 +1,51 @@
 Test Scenario
 0- (Server Not Running)
-Connection to server is refused, check if server is running
 
 1- Run Client in upload mode -- (Output: Error Message: Server Not Found -- exit gracefully)
-(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcli.py -u 127.0.0.1 13500 -m 'hi'
+(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcl.py -u 127.0.0.1 13500 -m 'hi'
 Error Message: Server Not Found
 
 2- Run Client in download mode – (Output: Error Message: Server Not Found – exit gracefully)
-(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcli.py -d 127.0.0.1 13500
+(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcl.py -d 127.0.0.1 13500
 Error Message: Server Not Found
 
 
 3- Run Server (server never exits or crashes – server may print out status statements to indicate client request activity – you should specific what the server will print in the README file)
+(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetsrv.py 13500
+ServerPort Starts at 13500
 
 4- Run Client in download mode (Output: EMPTY Message)
-(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcli.py -d 127.0.0.1 13500
+(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcl.py -d 127.0.0.1 13500
 ""
 
 5- Run Client in upload mode – upload message0 > 150 characters (Output: Error)
-(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcli.py -u 127.0.0.1 13500 -m 'You will need to develop your own "protocol" for the communication between the client and the server. While you should use TCP to transfer messages back and forth, you must determine exactly what messages will be sent, what they mean and when they will be sent (syntax, semantics and timing). Be sure to document your protocol completely in the program write-up'
-message length over 150 limit
+(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcl.py -u 127.0.0.1 13500 -m 'You will need to develop your own "protocol" for the communication between the client and the server. While you should use TCP to transfer messages back and forth, you must determine exactly what messages will be sent, what they mean and when they will be sent (syntax, semantics and timing). Be sure to document your protocol completely in the program write-up'
+Error Message: argument value is invalid
 
 6- Run Client in download mode (Output: EMPTY Message)
-(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcli.py -d 127.0.0.1 13500
+(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcl.py -d 127.0.0.1 13500
 ""
 
 7- Run Client in upload mode – upload message1 <= 150 characters (Output: Upload Successful)
-(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcli.py -u 127.0.0.1 13500 -m 'hi'
+(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcl.py -u 127.0.0.1 13500 -m 'hi'
 Upload Successful
 
 8- Run Client in download mode (Output: message1)
-(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcli.py -d 127.0.0.1 13500
+(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcl.py -d 127.0.0.1 13500
 "hi"
 
 9- Run Client in upload mode – upload message 2 (different from message1) <= 150 characters (Output: Upload Successful)
-(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcli.py -u 127.0.0.1 13500 -m 'sad'
+(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcl.py -u 127.0.0.1 13500 -m 'sad'
 Upload Successful
 
 10- Run Client in download mode (Output: message2)
-(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcli.py -d 127.0.0.1 13500
-sad
+(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcl.py -d 127.0.0.1 13500
+"sad"
 
 11- Run Client in upload mode – upload message3 > 150 characters (Output: Error)
-(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcli.py -u 127.0.0.1 13500 -m 'You will need to develop your own "protocol" for the communication between the client and the server. While you should use TCP to transfer messages back and forth, you must determine exactly what messages will be sent, what they mean and when they will be sent (syntax, semantics and timing). Be sure to document your protocol completely in the program write-up'
-message length over 150 limit
+(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcl.py -u 127.0.0.1 13500 -m 'You will need to develop your own "protocol" for the communication between the client and the server. While you should use TCP to transfer messages back and forth, you must determine exactly what messages will be sent, what they mean and when they will be sent (syntax, semantics and timing). Be sure to document your protocol completely in the program write-up'
+Error Message: argument value is invalid
 
 12- Run Client in download mode (Output: message2)
-(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcli.py -d 127.0.0.1 13500
-sad
+(base) MichaeldeMacBook-Pro:Mcl PA1 Terminator$ python ttweetcl.py -d 127.0.0.1 13500
+"sad"
